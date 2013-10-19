@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
+		<title>rainshapes</title>
+		<script type="text/javascript">
+			var images = ['img/logo.png', 'img/logo1.png', 'img/logo2.png', 'img/logo3.png', 'img/logo4.png'];
+			for(var i = 0; i < images.length; i++){
+				var img = new Image();
+				img.src = images[i];
+			}
+			function changeFocus(src, text){
+				var logo = document.getElementById("logo");
+				logo.src = src;
+				var title = document.getElementById("title");
+				title.innerHTML = text;
+			}
+		</script>
+	</head>
+	
+	<body>
+		<div class="title" id="title">rainshapes</div>
+		<img src="img/logo.png" class="logo" id="logo" usemap="#logonav">
+		<map name="logonav">
+			<area shape="rect" coords="0, 0, 128, 128" href="about.html" onMouseOver="changeFocus('img/logo1.png', 'about')" onMouseOut="changeFocus('img/logo.png', 'rainshapes')">
+			<area shape="rect" coords="0, 256, 128, 128" href="code.html" onMouseOver="changeFocus('img/logo2.png', 'code')" onMouseOut="changeFocus('img/logo.png', 'rainshapes')">
+			<area shape="rect" coords="256, 256, 128, 128" href="games.html" onMouseOver="changeFocus('img/logo3.png', 'games')" onMouseOut="changeFocus('img/logo.png', 'rainshapes')">
+			<area shape="rect" coords="256, 0, 128, 128" href="http://rainshapes.tumblr.com/" onMouseOver="changeFocus('img/logo4.png', 'blog')" onMouseOut="changeFocus('img/logo.png', 'rainshapes')">
+		</map>
+	</body>
+</html>
